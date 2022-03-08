@@ -8,10 +8,20 @@
 
 def Two_Sum_Solution_1(nums, target):
     '''
-        方法1: 使用暴力的方法，直接
+        方法1: 使用暴力的方法，直接遍历所有情况
     '''
+    ans = []
+    nums_length = len(nums)
+    for i in range(0, nums_length):
+        for j in range((i+1), nums_length):
+            if (nums[i] + nums[j]) == target:
+                ans.append(i)
+                ans.append(j)
+                return ans
+            else:
+                continue
 
 if __name__ == "__main__":
     nums = [2, 3, 4, 5]
     target = 9
-    Two_Sum_Solution_1(nums, target)
+    print(Two_Sum_Solution_1(nums, target))
